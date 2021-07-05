@@ -332,19 +332,16 @@
 			/**
 			 * リセットボタンのクリックイベント
 			 */
-			 document.body.addEventListener('keydown',
-				event => {
-					if (event.key === 'v') {
+			$('.btn-reset').click(function () {
 				// リセットボタンを押せないようにする
-					$(this).attr('disabled', true);
-					// スタートボタンを押せるようにする
-					$('.btn-start').attr('disabled', false);
-					// ストップボタンを押せないようにする
-					$('.btn-stop').attr('disabled', true);
-					// スロットのリール情報を初期化
-					Slot.init();
-					$("#slot-frame").css( { 'background-color' : 'white'});
-					}
+				$(this).attr('disabled', true);
+				// スタートボタンを押せるようにする
+				$('.btn-start').attr('disabled', false);
+				// ストップボタンを押せないようにする
+				$('.btn-stop').attr('disabled', true);
+				// スロットのリール情報を初期化
+				Slot.init();
+				$("#slot-frame").css( { 'background-color' : 'white'});
 			});
 
 			/**
