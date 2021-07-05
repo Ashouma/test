@@ -17,13 +17,13 @@
 				list-style: none;
 			}
 			.slot {
-				width: 90%;
-				height: 800px;
+				width: 100%;
+				height: 100%;
 				overflow: hidden;
 				margin: auto;
 			}
 			.slot-frame {
-				height: 800px;
+				height: 100%;
 				position: relative;
 				overflow: hidden;
 			}
@@ -41,18 +41,18 @@
 				right: 0;
 			}
 			.reel {
-				height: 270px;
+				height:100%;
 			}
 			.reel img {
 				display: block;
-				width: 89%;
+				width: 50%;
 				margin: auto;
 			}
 			.btn{
 				text-align: left;
 			}
 			.btn1{
-				text-align: left;
+				text-align: center;
 			}
 		</style>
 		<script>
@@ -332,16 +332,19 @@
 			/**
 			 * リセットボタンのクリックイベント
 			 */
-			$('.btn-reset').click(function () {
+			 document.body.addEventListener('keydown',
+				event => {
+					if (event.key === 'v') {
 				// リセットボタンを押せないようにする
-				$(this).attr('disabled', true);
-				// スタートボタンを押せるようにする
-				$('.btn-start').attr('disabled', false);
-				// ストップボタンを押せないようにする
-				$('.btn-stop').attr('disabled', true);
-				// スロットのリール情報を初期化
-				Slot.init();
-				$("#slot-frame").css( { 'background-color' : 'white'});
+					$(this).attr('disabled', true);
+					// スタートボタンを押せるようにする
+					$('.btn-start').attr('disabled', false);
+					// ストップボタンを押せないようにする
+					$('.btn-stop').attr('disabled', true);
+					// スロットのリール情報を初期化
+					Slot.init();
+					$("#slot-frame").css( { 'background-color' : 'white'});
+					}
 			});
 
 			/**
@@ -420,7 +423,6 @@
 			</div>
 		</div>
 		<div class="btn">
-			<button type="button" class="btn-start">start</button>
 			<button type="button" class="btn-reset" disabled="true">reset</button>
 		</div>
 		<div class="btn1">
