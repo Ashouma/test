@@ -1,0 +1,34 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="BlueJelly">
+    <meta name="viewport" content="width=640, maximum-scale=1.0, user-scalable=yes">
+    <title>Bluethooth Menu</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="bluejelly.js"></script>
+    <script src="BLE.js"></script>
+  </head>
+
+<body>
+<div class="container">
+    <div class="title margin">
+        <p id="title">Bluethooth Menu</p>
+        <p id="subtitle">ConnectとUUID</p>
+    </div>
+
+    <div class="contents margin">
+        <button id="scan" class="button">Scan</button>
+        <button id="connect" class="button">Connect</button>
+        <button onclick="location.href='./srot.html'">slot</button>
+        <hr>
+        <div id="device_name"> </div>
+        <div id="uuid_name"> </div>
+        <div id="status"> </div>
+
+    </div>
+    <div class="footer margin">
+        For more information, see <a href="https://monomonotech.jp/kurage" target="_blank">jellyware.jp</a> and <a href="https://github.com/electricbaka/bluejelly" target="_blank">GitHub</a> !
+    </div>
+</div>
+</body></html>
