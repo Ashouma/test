@@ -105,6 +105,7 @@
 			<button type="button" class="btn-reset" disabled="true">reset</button>
 			<button id="scan" class="button">Scan</button>
         	<button id="connect" class="button">Connect</button>
+			<button id="write" class="button">Write</button>
 		</div>
 		<div class="btn1">
 			<button type="button" class="btn-stop" data-val="0" disabled="true">stop 0</button>
@@ -126,7 +127,7 @@
 			//--------------------------------------------------
 			window.onload = function () {
 			//UUIDの設定
-			ble.setUUID("UUID1", BlueJelly.MICROBIT_UART_SERVICE, BlueJelly.MICROBIT_TX_CHARACTERISTIC);
+			ble.setUUID("UUID1", BlueJelly.MICROBIT_UART_SERVICE, BlueJelly.MICROBIT_RX_CHARACTERISTIC);
 			}
 
 
@@ -134,8 +135,8 @@
 			//Scan後の処理
 			//--------------------------------------------------
 			ble.onScan = function (deviceName) {
-			document.getElementById('device_name').innerHTML = deviceName;
-			document.getElementById('status').innerHTML = "found device!";
+				document.getElementById('device_name').innerHTML = deviceName;
+				document.getElementById('status').innerHTML = "found device!";
 			}
 
 
@@ -149,7 +150,13 @@
 			document.getElementById('status').innerHTML = "connected GATT!";
 			}
 
-
+			//--------------------------------------------------
+			//Write後の処理
+			//--------------------------------------------------
+			ble.onWrite = function(uuid){
+			document.getElementById('uuid_name').innerHTML = uuid;
+			document.getElementById('status').innerHTML = "written data"
+			}
 			//-------------------------------------------------
 			//ボタンが押された時のイベント登録
 			//--------------------------------------------------
@@ -160,15 +167,19 @@
 			document.getElementById('connect').addEventListener('click', function(){
 				ble.connectGATT('UUID1');
 			});
-			function set_display() {
-				if (document.getElementById('radio_2').checked){
-					// btn_1を非表示
-					document.getElementById('btn_1').style.display = 'none'
-				}else{
-					// btn_1を表示
-					document.getElementById('btn_1').style.display = 'inline'
-				}
-			}
+			//-------------------------------------------------
+			//デバイス側にデータ送信時
+			//--------------------------------------------------
+			document.getElementById('write').addEventListener('click', function() {
+				//フォーマットに従って値を変換
+				value = 1;
+				const textEncoder = new TextEncoder();
+				const text_data = document.getElementById('write_value').value;
+				const text_data_encoded = textEncoder.encode(text_data + '\n');
+
+				//write
+				ble.write('UUID1', text_data_encoded);
+			});
 		</script>
 	</body>
 </html>
