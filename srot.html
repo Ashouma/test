@@ -127,7 +127,7 @@
 			//--------------------------------------------------
 			window.onload = function () {
 			//UUIDの設定
-			ble.setUUID("UUID1", BlueJelly.MICROBIT_LED_SERVICE, BlueJelly.MICROBIT_LED_TEXT);
+			ble.setUUID("UUID1", BlueJelly.MICROBIT_UART_SERVICE, BlueJelly.MICROBIT_RX_CHARACTERISTIC);
 			}
 
 
@@ -171,9 +171,14 @@
 			//デバイス側にデータ送信時
 			//--------------------------------------------------
 			document.getElementById('write').addEventListener('click', function() {
+				//フォーマットに従って値を変換
+				value = 1;
+				const textEncoder = new TextEncoder();
+				const text_data = document.getElementById('write_value').value;
+				const text_data_encoded = textEncoder.encode(text_data + '\n');
 
 				//write
-				ble.write('UUID1', [0x01]);
+				ble.write('UUID1', text_data_encoded);
 			});
 		</script>
 	</body>
