@@ -1,5 +1,8 @@
 <html lang="ja" ng-app="myApp">
 	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="BlueJelly">
         <link rel="stylesheet" type="text/css" href=./ui-set.css></link>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
         <script src="./js/app.js"></script>
@@ -9,7 +12,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-		<script src="BLE.js"></script>
+		<script type="text/javascript" src="bluejelly.js"></script>
 		<link rel="manifest" href="manifest.json">
 		<script>
 			// service workerの登録関係
@@ -36,6 +39,9 @@
 	</head>
 	<body>
 		<h1>AiL Slot</h1>
+		<div id="device_name"> </div>
+        <div id="uuid_name"> </div>
+        <div id="status"> </div>
 		<div class="slot">
 			<div class="slot-frame" id="slot-frame">
 				<ul class="reels">
@@ -97,7 +103,8 @@
 		</div>
 		<div class="btn">
 			<button type="button" class="btn-reset" disabled="true">reset</button>
-            <button onclick="location.href='./test.html'">MENU</button>
+			<button id="scan" class="button">Scan</button>
+        	<button id="connect" class="button">Connect</button>
 		</div>
 		<div class="btn1">
 			<button type="button" class="btn-stop" data-val="0" disabled="true">stop 0</button>
@@ -105,7 +112,63 @@
 			<button type="button" class="btn-stop" data-val="2" disabled="true">stop 2</button>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src = "d:/work/Beeats/Trial_production/slot/9.program/html/slot_program.js">	
+		<script src = "d:/work/Beeats/Trial_production/slot/9.program/html/slot_program.js"></script>
+		<script>
+			//--------------------------------------------------
+			//Global変数
+			//--------------------------------------------------
+			//BlueJellyのインスタンス生成
+			const ble = new BlueJelly();
+
+
+			//--------------------------------------------------
+			//ロード時の処理
+			//--------------------------------------------------
+			window.onload = function () {
+			//UUIDの設定
+			ble.setUUID("UUID1", BlueJelly.MICROBIT_UART_SERVICE, BlueJelly.MICROBIT_TX_CHARACTERISTIC);
+			}
+
+
+			//--------------------------------------------------
+			//Scan後の処理
+			//--------------------------------------------------
+			ble.onScan = function (deviceName) {
+			document.getElementById('device_name').innerHTML = deviceName;
+			document.getElementById('status').innerHTML = "found device!";
+			}
+
+
+			//--------------------------------------------------
+			//ConnectGATT後の処理
+			//--------------------------------------------------
+			ble.onConnectGATT = function (uuid) {
+			console.log('> connected GATT!');
+
+			document.getElementById('uuid_name').innerHTML = uuid;
+			document.getElementById('status').innerHTML = "connected GATT!";
+			}
+
+
+			//-------------------------------------------------
+			//ボタンが押された時のイベント登録
+			//--------------------------------------------------
+			document.getElementById('scan').addEventListener('click', function() {
+				ble.scan('UUID1');
+			});
+
+			document.getElementById('connect').addEventListener('click', function(){
+				ble.connectGATT('UUID1');
+			});
+			function set_display() {
+				if (document.getElementById('radio_2').checked){
+					// btn_1を非表示
+					document.getElementById('btn_1').style.display = 'none'
+				}else{
+					// btn_1を表示
+					document.getElementById('btn_1').style.display = 'inline'
+				}
+			}
 		</script>
 	</body>
 </html>
