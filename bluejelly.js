@@ -59,15 +59,14 @@ var BlueJelly = function(){
       this.onError(error);
     });
   }
-  
-  const LED_SERVICE = "7530f362-3daa-11ed-b878-0242ac120002";
+
   //--------------------------------------------------
   //requestDevice
   //--------------------------------------------------
   BlueJelly.prototype.requestDevice = function(uuid) {
     console.log('Execute : requestDevice');
     return navigator.bluetooth.requestDevice({filters: [
-      { services: [LED_SERVICE] },
+      { services: ["7530f362-3daa-11ed-b878-0242ac120002"] },
       { namePrefix: "BBC micro:bit" }
     ]})
     .then(device => {
