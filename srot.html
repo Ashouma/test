@@ -127,7 +127,7 @@
 			//--------------------------------------------------
 			window.onload = function () {
 			//UUIDの設定
-			ble.setUUID("UUID1", BlueJelly.MICROBIT_UART_SERVICE, BlueJelly.MICROBIT_RX_CHARACTERISTIC);
+			ble.setUUID("RN40202D6A", BlueJelly.MICROBIT_UART_SERVICE, BlueJelly.MICROBIT_RX_CHARACTERISTIC);
 			}
 
 
@@ -135,8 +135,8 @@
 			//Scan後の処理
 			//--------------------------------------------------
 			ble.onScan = function (deviceName) {
-			document.getElementById('device_name').innerHTML = deviceName;
-			document.getElementById('status').innerHTML = "found device!";
+				document.getElementById('device_name').innerHTML = deviceName;
+				document.getElementById('status').innerHTML = "found device!";
 			}
 
 
@@ -157,19 +157,28 @@
 			document.getElementById('uuid_name').innerHTML = uuid;
 			document.getElementById('status').innerHTML = "written data"
 			}
-
-
 			//-------------------------------------------------
 			//ボタンが押された時のイベント登録
 			//--------------------------------------------------
-			document.getElementById('write').addEventListener('click', function() {
-			//フォーマットに従って値を変換
-			const textEncoder = new TextEncoder();
-			const text_data = document.getElementById('write_value').value;
-			const text_data_encoded = textEncoder.encode(text_data + '\n');
+			document.getElementById('scan').addEventListener('click', function() {
+				ble.scan('RN40202D6A');
+			});
 
-			//write
-			ble.write('UUID1', text_data_encoded);
+			document.getElementById('connect').addEventListener('click', function(){
+				ble.connectGATT('RN40202D6A');
+			});
+			//-------------------------------------------------
+			//デバイス側にデータ送信時
+			//--------------------------------------------------
+			document.getElementById('write').addEventListener('click', function() {
+				//フォーマットに従って値を変換
+				value = 1;
+				const textEncoder = new TextEncoder();
+				const text_data = document.getElementById('write_value').value;
+				const text_data_encoded = textEncoder.encode(text_data + '\n');
+
+				//write
+				ble.write('UUID1', [0x01]);
 			});
 		</script>
 	</body>
