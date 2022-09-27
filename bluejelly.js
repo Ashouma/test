@@ -70,7 +70,7 @@ var BlueJelly = function(){
     
     return navigator.bluetooth.requestDevice({
       acceptAllDevices:true, // 全てのデバイスを対象にスキャンを実施する
-      optionalServices:['7530f362-3daa-11ed-b878-0242ac120002']}
+      optionalServices:[7530f362-3daa-11ed-b878-0242ac120002]}
       )
     .then(device => {
       this.bluetoothDevice = device;
