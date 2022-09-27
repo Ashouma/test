@@ -161,11 +161,11 @@
 			//ボタンが押された時のイベント登録
 			//--------------------------------------------------
 			document.getElementById('scan').addEventListener('click', function() {
-				ble.scan('UUID1');
+				ble.scan('RN40202D6A');
 			});
 
 			document.getElementById('connect').addEventListener('click', function(){
-				ble.connectGATT('UUID1');
+				ble.connectGATT('RN40202D6A');
 			});
 			//-------------------------------------------------
 			//デバイス側にデータ送信時
