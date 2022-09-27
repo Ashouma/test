@@ -21,7 +21,7 @@ https://webbluetoothcg.github.io/web-bluetooth/
 var BlueJelly = function(){
     this.bluetoothDevice = null;
     this.dataCharacteristic = null;
-    this.hashUUID ={};
+    this.hashUUID ={7530F3623DAA11EDB8780242AC120002};
     this.hashUUID_lastConnected;
   
     //callBack
