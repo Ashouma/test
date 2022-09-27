@@ -304,4 +304,5 @@ var BlueJelly = function(){
   Object.defineProperty(BlueJelly, 'MICROBIT_UART_SERVICE', {value: "7530f362-3daa-11ed-b878-0242ac120002", writable: false});
   Object.defineProperty(BlueJelly, 'MICROBIT_TX_CHARACTERISTIC', {value: "7530f614-3daa-11ed-b878-0242ac120002", writable: false});
   Object.defineProperty(BlueJelly, 'MICROBIT_RX_CHARACTERISTIC', {value: "7530f614-3daa-11ed-b878-0242ac120002", writable: false});
+ 
   
