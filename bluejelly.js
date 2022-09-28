@@ -70,9 +70,9 @@ var BlueJelly = function(){
     
     return navigator.bluetooth.requestDevice({
       filters: [{
-        services: ['b9b2d3bd-01fa-4e9b-907a-bedb41c268cd'],
+        services: ['8f7d2bfa-3efe-11ed-b878-0242ac120002'],
         namePrefix: 'RN40202D6A',
-        optionalServices: ['b9b2d3bd-01fa-4e9b-907a-bedb41c268cd']
+        optionalServices: ['8f7d2bfa-3efe-11ed-b878-0242ac120002']
       }]
     })
     .then(device => {
