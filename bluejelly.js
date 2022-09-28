@@ -309,7 +309,7 @@ var BlueJelly = function(){
   Object.defineProperty(BlueJelly, 'MICROBIT_TEMPERATURE_SERVICE', {value: "e95d6100-251d-470a-a062-fa1922dfa9a8", writable: false});
   Object.defineProperty(BlueJelly, 'MICROBIT_TEMPERATURE', {value: "e95d9250-251d-470a-a062-fa1922dfa9a8", writable: false});
   Object.defineProperty(BlueJelly, 'MICROBIT_TEMPERATURE_PERIOD', {value: "e95d1b25-251d-470a-a062-fa1922dfa9a8", writable: false});
-  Object.defineProperty(BlueJelly, 'MICROBIT_UART_SERVICE', {value: "7530f362-3daa-11ed-b878-0242ac120002", writable: false});
+  Object.defineProperty(BlueJelly, 'MICROBIT_UART_SERVICE', {value: "b9b2d3bd-01fa-4e9b-907a-bedb41c268cd", writable: false});
   Object.defineProperty(BlueJelly, 'MICROBIT_TX_CHARACTERISTIC', {value: "7530F8E4-3DAA-11ED-B878-0242AC120002", writable: false});
   Object.defineProperty(BlueJelly, 'MICROBIT_RX_CHARACTERISTIC', {value: "7530F8E4-3DAA-11ED-B878-0242AC120002", writable: false});
  
