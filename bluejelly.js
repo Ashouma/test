@@ -70,8 +70,8 @@ var BlueJelly = function(){
     
     return navigator.bluetooth.requestDevice({
       filters: [{
-        namePrefix: 'RN40202D6A',
         services: ['7530f362-3daa-11ed-b878-0242ac120002'],
+        namePrefix: 'RN40202D6A',
         optionalServices: [0x1801,'7530f362-3daa-11ed-b878-0242ac120002']
       }]
     })
