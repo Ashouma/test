@@ -75,6 +75,9 @@ var BlueJelly = function(){
         optionalServices: [0x1801,'7530f362-3daa-11ed-b878-0242ac120002']
       }]
     })
+    .then(server => {
+      return server.getPrimaryService("7530f362-3daa-11ed-b878-0242ac120002");
+    })
     .then(device => {
       this.bluetoothDevice = device;
       this.bluetoothDevice.addEventListener('gattserverdisconnected', this.onDisconnect);
