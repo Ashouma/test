@@ -69,8 +69,11 @@ var BlueJelly = function(){
     console.log('Execute : requestDevice');
     
     return navigator.bluetooth.requestDevice({
-      acceptAllDevices:true, // 全てのデバイスを対象にスキャンを実施する
-      optionalServices:[7530f614-3daa-11ed-b878-0242ac120002]
+      filters: [{
+        namePrefix: 'RN40202D6A',
+        // services: ['0000fff0-0000-1000-8000-00805f9b34fb','0000fff1-0000-1000-8000-00805f9b34fb','0000fff2-0000-1000-8000-00805f9b34fb','0000fff3-0000-1000-8000-00805f9b34fb'],
+        optionalServices: ['7530f362-3daa-11ed-b878-0242ac120002']
+      }]
     })
     .then(device => {
       this.bluetoothDevice = device;
