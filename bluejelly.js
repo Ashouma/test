@@ -72,7 +72,7 @@ var BlueJelly = function(){
       filters: [{
         services: ['7530f362-3daa-11ed-b878-0242ac120002'],
         namePrefix: 'RN40202D6A',
-        optionalServices: [0x1801,'7530f362-3daa-11ed-b878-0242ac120002']
+        optionalServices: ['7530f362-3daa-11ed-b878-0242ac120002']
       }]
     })
     .then(device => {
