@@ -172,13 +172,12 @@
 			//--------------------------------------------------
 			document.getElementById('write').addEventListener('click', function() {
 				//フォーマットに従って値を変換
-				value = 1;
-				//const textEncoder = new TextEncoder();
-				//const text_data = document.getElementById('write_value').value;
-				//const text_data_encoded = textEncoder.encode(text_data + '\n');
+				const textEncoder = new TextEncoder();
+				const text_data = "aaaa";
+				const text_data_encoded = textEncoder.encode(text_data + '\n');
 
 				//write
-				ble.write('UUID1', [0x10]);
+				ble.write('UUID1', text_data_encoded);
 			});
 		</script>
 	</body>
