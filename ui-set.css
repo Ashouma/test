@@ -8,7 +8,7 @@ ul {
 }
 .slot {
     width: 100%;
-    height: 100%;
+    height: 80%;
     overflow: hidden;
     margin: auto;
 }
@@ -39,8 +39,111 @@ ul {
     margin: auto;
 }
 .btn{
+    display: flex;
     text-align: left;
 }
-.btn1{
-    text-align: center;
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;
 }
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+a {
+    color: rgb(115, 51, 235);
+    text-decoration: none;
+  }
+
+.btn1{
+    padding: 5px 100px 0px 100px;
+    display: flex;
+    text-align: center;
+    color: #fff;
+    background-color: #6d94ef;
+    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    line-height: 100px;
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn2{
+    display: flex;
+    text-align: center;
+    color: #fff;
+    background-color: #6d94ef;
+    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    line-height: 100px;
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn3{
+    display: flex;
+    text-align: center;
+    color: #fff;
+    background-color: #6d94ef;
+    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    line-height: 100px;
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a.btn--orange {
+    color: #fff;
+    background-color: #eb6100;
+  }
+  
+  a.btn--orange:hover {
+    color: #fff;
+    background: #f56500;
+  }
+  
+  a.btn--shadow {
+    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  a.btn--circle {
+    border-radius: 50%;
+    line-height: 100px;
+    width: 100px;
+    height: 100px;
+    padding: 0;
+  }

@@ -106,11 +106,16 @@
 			<button id="scan" class="button">Scan</button>
         	<button id="connect" class="button">Connect</button>
 			<button id="write" class="button">Write</button>
-		</div>
-		<div class="btn1">
-			<button type="button" class="btn-stop" data-val="0" disabled="true">stop 0</button>
-			<button type="button" class="btn-stop" data-val="1" disabled="true">stop 1</button>
-			<button type="button" class="btn-stop" data-val="2" disabled="true">stop 2</button>
+		
+			<div class="btn1">
+				<a href="#" type="button" style="font-size: 15pt;" class="btn-stop" data-val="0" disabled="true" >PUSH！</button>
+			</div>
+			<div class="btn2">
+				<a href="#" type="button" style="font-size: 15pt;" class="btn-stop" data-val="1" disabled="true">PUSH！</button>
+			</div>
+			<div  class="btn3">
+				<a href="#"  type="button"style="font-size: 15pt;"  class="btn-stop" data-val="2" disabled="true">PUSH！</button>
+			</div>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src = "d:/work/Beeats/Trial_production/slot/9.program/html/slot_program.js"></script>
@@ -127,7 +132,7 @@
 			//--------------------------------------------------
 			window.onload = function () {
 			//UUIDの設定
-			ble.setUUID("RN40202D6A","8f7d2bfa-3efe-11ed-b878-0242ac120002", "ff6b1548-8fe6-11e7-abc4-cec278b6b50a");
+			ble.setUUID("AiLCORONA","8f7d2bfa-3efe-11ed-b878-0242ac120002", "ff6b1548-8fe6-11e7-abc4-cec278b6b50a");
 			}
 
 
@@ -172,7 +177,6 @@
 			//--------------------------------------------------
 			document.getElementById('write').addEventListener('click', function() {
 				//フォーマットに従って値を変換
-				
 				ble.write('UUID1', [0x00, 0x02]);
 			});
 		</script>
