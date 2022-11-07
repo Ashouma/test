@@ -64,19 +64,17 @@ var BlueJelly = function(){
   //--------------------------------------------------
   //requestDevice
   //--------------------------------------------------
-  BlueJelly.prototype.requestDevice = function(uuid) {
-    
-    console.log('Execute : requestDevice');
-    
-    return navigator.bluetooth.requestDevice({
+ BlueJelly.prototype.requestDevice = function(uuid) {
+  console.log('Execute : requestDevice');
+  return navigator.bluetooth.requestDevice({
       acceptAllDevices: true,
       optionalServices: [this.hashUUID[uuid].serviceUUID]})
-    .then(device => {
-      this.bluetoothDevice = device;
-      this.bluetoothDevice.addEventListener('gattserverdisconnected', this.onDisconnect);
-      this.onScan(this.bluetoothDevice.name);
-    });
-  }
+  .then(device => {
+    this.bluetoothDevice = device;
+    this.bluetoothDevice.addEventListener('gattserverdisconnected', this.onDisconnect);
+    this.onScan(this.bluetoothDevice.name);
+  });
+}
   
   
   //--------------------------------------------------
