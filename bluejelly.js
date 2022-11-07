@@ -71,8 +71,7 @@ var BlueJelly = function(){
     return navigator.bluetooth.requestDevice({
       filters: [{
         services: ['8f7d2bfa-3efe-11ed-b878-0242ac120002'],
-        name: 'AiLCORONA',
-        optionalServices: ['8f7d2bfa-3efe-11ed-b878-0242ac120002']
+        name: 'AiLCORONA'
       }]
     })
     .then(device => {
