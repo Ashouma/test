@@ -166,11 +166,11 @@
 			//ボタンが押された時のイベント登録
 			//--------------------------------------------------
 			document.getElementById('scan').addEventListener('click', function() {
-				ble.scan('AiLCORONA');
+				ble.scan('UUID1');
 			});
 
 			document.getElementById('connect').addEventListener('click', function(){
-				ble.connectGATT('AiLCORONA');
+				ble.connectGATT('UUID1');
 			});
 			//-------------------------------------------------
 			//デバイス側にデータ送信時
