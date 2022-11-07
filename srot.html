@@ -132,7 +132,7 @@
 			//--------------------------------------------------
 			window.onload = function () {
 			//UUIDの設定
-			ble.setUUID("UUID1","8f7d2bfa-3efe-11ed-b878-0242ac120002", "ff6b1548-8fe6-11e7-abc4-cec278b6b50a");
+			ble.setUUID("AiLCORONA","8f7d2bfa-3efe-11ed-b878-0242ac120002", "ff6b1548-8fe6-11e7-abc4-cec278b6b50a");
 			}
 
 
@@ -177,7 +177,7 @@
 			//--------------------------------------------------
 			document.getElementById('write').addEventListener('click', function() {
 				//フォーマットに従って値を変換
-				ble.write('UUID1', [0x00, 0x02]);
+				ble.write('AiLCORONA', [0x00, 0x02]);
 			});
 		</script>
 	</body>
