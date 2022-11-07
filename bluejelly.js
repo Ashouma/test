@@ -69,10 +69,8 @@ var BlueJelly = function(){
     console.log('Execute : requestDevice');
     
     return navigator.bluetooth.requestDevice({
-      filters: [{
-        name: 'AiLCORONA'
-      }]
-    })
+      acceptAllDevices: true,
+      optionalServices: [this.hashUUID[uuid].serviceUUID]})
     .then(device => {
       this.bluetoothDevice = device;
       this.bluetoothDevice.addEventListener('gattserverdisconnected', this.onDisconnect);
