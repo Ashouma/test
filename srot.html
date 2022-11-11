@@ -38,84 +38,15 @@
 		</script>
 	</head>
 	<body>
-		<h1>AiL Slot</h1>
-		<div id="device_name"> </div>
-        <div id="uuid_name"> </div>
-        <div id="status"> </div>
-		<div class="slot">
-			<div class="slot-frame" id="slot-frame">
-				<ul class="reels">
-					<li class="reel"><img src="slot1.jpg"></li>
-					<li class="reel"><img src="slot2.jpg"></li>
-					<li class="reel"><img src="slot3.jpg"></li>
-					<li class="reel"><img src="slot4.jpg"></li>
-					<li class="reel"><img src="slot5.jpg"></li>
-					<li class="reel"><img src="slot6.jpg"></li>
-					<li class="reel"><img src="slot7.jpg"></li>
-					<li class="reel"><img src="slot8.jpg"></li>
-					<li class="reel"><img src="slot1.jpg"></li>
-					<li class="reel"><img src="slot2.jpg"></li>
-                    <li class="reel"><img src="slot3.jpg"></li>
-					<li class="reel"><img src="slot4.jpg"></li>
-					<li class="reel"><img src="slot5.jpg"></li>
-					<li class="reel"><img src="slot6.jpg"></li>
-					<li class="reel"><img src="slot7.jpg"></li>
-					<li class="reel"><img src="slot8.jpg"></li>
-                    
-				</ul>
-				<ul class="reels">
-					<li class="reel"><img src="slot5.jpg"></li>
-					<li class="reel"><img src="slot2.jpg"></li>
-					<li class="reel"><img src="slot6.jpg"></li>
-					<li class="reel"><img src="slot4.jpg"></li>
-					<li class="reel"><img src="slot1.jpg"></li>
-					<li class="reel"><img src="slot3.jpg"></li>
-					<li class="reel"><img src="slot4.jpg"></li>
-					<li class="reel"><img src="slot5.jpg"></li>
-					<li class="reel"><img src="slot7.jpg"></li>
-					<li class="reel"><img src="slot8.jpg"></li>
-					<li class="reel"><img src="slot2.jpg"></li>
-					<li class="reel"><img src="slot6.jpg"></li>
-					<li class="reel"><img src="slot4.jpg"></li>
-					<li class="reel"><img src="slot1.jpg"></li>
-					<li class="reel"><img src="slot3.jpg"></li>
-					<li class="reel"><img src="slot4.jpg"></li>
-				</ul>
-				<ul class="reels">
-					<li class="reel"><img src="slot3.jpg"></li>
-					<li class="reel"><img src="slot2.jpg"></li>
-					<li class="reel"><img src="slot5.jpg"></li>
-					<li class="reel"><img src="slot1.jpg"></li>
-					<li class="reel"><img src="slot4.jpg"></li>
-					<li class="reel"><img src="slot5.jpg"></li>
-					<li class="reel"><img src="slot6.jpg"></li>
-					<li class="reel"><img src="slot7.jpg"></li>
-					<li class="reel"><img src="slot8.jpg"></li>
-					<li class="reel"><img src="slot3.jpg"></li>
-					<li class="reel"><img src="slot2.jpg"></li>
-					<li class="reel"><img src="slot3.jpg"></li>
-					<li class="reel"><img src="slot2.jpg"></li>
-					<li class="reel"><img src="slot5.jpg"></li>
-					<li class="reel"><img src="slot1.jpg"></li>
-					<li class="reel"><img src="slot4.jpg"></li>
-				</ul>
-			</div>
+		<h1>AiL Pocky</h1>
+		<img src="22_img_main.png">
+		<div class="btn1">
+			<a href="#" id="write" type="button" style="font-size: 30pt;" class="buttonp" data-val="0" disabled="true" >Pocky</button>
 		</div>
 		<div class="btn">
 			<button type="button" class="btn-reset" disabled="true">reset</button>
 			<button id="scan" class="button">Scan</button>
         	<button id="connect" class="button">Connect</button>
-			<button id="write" class="button">Write</button>
-		
-			<div class="btn1">
-				<a href="#" type="button" style="font-size: 15pt;" class="btn-stop" data-val="0" disabled="true" >PUSH！</button>
-			</div>
-			<div class="btn2">
-				<a href="#" type="button" style="font-size: 15pt;" class="btn-stop" data-val="1" disabled="true">PUSH！</button>
-			</div>
-			<div  class="btn3">
-				<a href="#"  type="button"style="font-size: 15pt;"  class="btn-stop" data-val="2" disabled="true">PUSH！</button>
-			</div>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src = "d:/work/Beeats/Trial_production/slot/9.program/html/slot_program.js"></script>
@@ -166,18 +97,18 @@
 			//ボタンが押された時のイベント登録
 			//--------------------------------------------------
 			document.getElementById('scan').addEventListener('click', function() {
-				ble.scan('AiLCORONA');
+				ble.scan('RN40202D6A');
 			});
 
 			document.getElementById('connect').addEventListener('click', function(){
-				ble.connectGATT('AiLCORONA');
+				ble.connectGATT('RN40202D6A');
 			});
 			//-------------------------------------------------
 			//デバイス側にデータ送信時
 			//--------------------------------------------------
 			document.getElementById('write').addEventListener('click', function() {
 				//フォーマットに従って値を変換
-				ble.write('AiLCORONA', [0x00, 0x02]);
+				ble.write('UUID1', [0x00, 0x02]);
 			});
 		</script>
 	</body>
